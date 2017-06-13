@@ -23,6 +23,17 @@
 
    ```  
    # pip install esptool
+
+   Collecting esptool
+   Using cached esptool-1.3.tar.gz
+   Collecting pyserial>=2.5 (from esptool)
+   Using cached pyserial-3.3-py2.py3-none-any.whl
+   Building wheels for collected packages: esptool
+   Running setup.py bdist_wheel for esptool ... done
+   Stored in directory: /Users/{youraccout}/Library/Caches/pip/wheels/36/10/52/d64ec3a050fdfb8561af3c52958fe514937bfaa6e1e676f084
+   Successfully built esptool
+   Installing collected packages: pyserial, esptool
+   Successfully installed esptool-1.3 pyserial-3.3
    ```
 
 3. git clone
@@ -33,4 +44,17 @@
 4. connect esp8266 with USB Port And then deploy the new firmware using:
     ```
     # esptool.py --port /dev/tty.wchusbserial1420 --baud 115200 write_flash --flash_size=detect -fm dio 0 esp8266-20170612-v1.9.1.bin
+
+    esptool.py v1.3
+    Connecting....
+    Auto-detected Flash size: 32m
+    Running Cesanta flasher stub...
+    Flash params set to 0x0240
+    Wrote 602112 bytes at 0x0 in 51.9 seconds (92.9 kbit/s)...
+    Leaving...
     ```
+  5. MicroPython REPL prompt (screen) Mac you can use the built-in
+    ```
+    screen  /dev/tty.wchusbserial1420 115200
+    ```
+    * When you're done using screen most versions of it allow you to exit by pressing Ctrl-a then k then y or presing Ctrl-a then typing :quit and pressing enter. *
