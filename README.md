@@ -18,20 +18,17 @@
     Installing setuptools, pip, wheel...done.
 
     # setvirtualenvproject $VIRTUAL_ENV $(pwd)
-
     ```
 2. Deploying the firmware
 
    ```  
    # pip install esptool
-
    ```
 
 3. git clone
 
     ```
     # git clone https://github.com/montri2025/esp8266-micropython-101.git
-
     ```    
 4. connect esp8266 with USB Port And then deploy the new firmware using:
     ```
