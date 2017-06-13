@@ -53,8 +53,18 @@
     Wrote 602112 bytes at 0x0 in 51.9 seconds (92.9 kbit/s)...
     Leaving...
     ```
+
   5. MicroPython REPL prompt (screen) Mac you can use the built-in
+
     ```
     screen  /dev/tty.wchusbserial1420 115200
     ```
-    * When you're done using screen most versions of it allow you to exit by pressing Ctrl-a then k then y or presing Ctrl-a then typing :quit and pressing enter. *
+    * When you're done using screen most versions of it allow you to exit by pressing Ctrl-a then k then y or presing Ctrl-a then typing :quit and pressing enter.
+
+    ```
+    picocom /dev/tty.wchusbserial1420 -b115200
+    ```
+    * if not found command 
+    ```
+    brew install picocom
+    ```
