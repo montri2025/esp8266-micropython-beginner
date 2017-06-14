@@ -43,7 +43,7 @@
     ```    
 4. connect esp8266 with USB Port And then deploy the new firmware using:
     ```
-    # esptool.py --port /dev/tty.wchusbserial1420 --baud 115200 write_flash --flash_size=detect -fm dio 0 esp8266-20170612-v1.9.1.bin
+    # esptool.py --port /dev/tty.wchusbserial1420 --baud 115200 write_flash --flash_size=detect -fm dio 0 firmware/esp8266-20170612-v1.9.1.bin
 
     esptool.py v1.3
     Connecting....
@@ -68,3 +68,65 @@
     ```
     # brew install picocom
     ```
+6. Basics Load File and Run code
+      ```
+      # pip install adafruit-ampy
+      Downloading adafruit_ampy-1.0.1-py2.py3-none-any.whl
+      Collecting click (from adafruit-ampy)
+      Using cached click-6.7-py2.py3-none-any.whl
+      Requirement already satisfied: pyserial in /Users/{youraccout}/.virtualenvs/micropython-101/lib/python3.4/site-packages (from adafruit-ampy)
+      Installing collected packages: click, adafruit-ampy
+      Successfully installed adafruit-ampy-1.0.1 click-6.7
+      #  ampy --help
+
+      ampy - Adafruit MicroPython Tool
+
+      Ampy is a tool to control MicroPython boards over a serial connection.
+      Using ampy you can manipulate files on the board's internal filesystem and
+      even run scripts.
+
+    Options:
+      -p, --port PORT  Name of serial port for connected board.  Can optionally
+                       specify with AMPY_PORT environemnt variable.  [required]
+      -b, --baud BAUD  Baud rate for the serial connection (default 115200).  Can
+                       optionally specify with AMPY_BAUD environment variable.
+      --version        Show the version and exit.
+      --help           Show this message and exit.
+
+    Commands:
+      get    Retrieve a file from the board.
+      ls     List contents of a directory on the board.
+      mkdir  Create a directory on the board.
+      put    Put a file or folder and its contents on the...
+      reset  Perform soft reset/reboot of the board.
+      rm     Remove a file from the board.
+      rmdir  Forcefully remove a folder and all its...
+      run    Run a script and print its output.
+      ```
+      6.1. Basics ampy command
+        6.1.1 config AMPY_PORT for use default port connect
+          ```
+          # export AMPY_PORT=/dev/tty.wchusbserial1420
+          ```
+        6.1.2 Run command
+          ```
+          # ampy run example/test.py
+          ไมโครไพทรอน (micropython) ยินดีต้อนรับ
+          xxxx
+          ```
+          * No output
+
+          ```
+          # ampy run -n example/test.py
+          ```
+        6.1.3 copy file form board to laptop
+          ```
+          # ampy get boot.py boo.py
+          ```
+        6.1.4 upload file to board
+          ```
+          # ampy put example/led_blink/boot.py boot.py
+          # ampy put example/led_blink/led_blink.py led_blink.py
+          # ampy put example/led_blink/main.py main.py
+          ```
+          then press reset button 
