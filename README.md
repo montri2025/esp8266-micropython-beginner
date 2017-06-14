@@ -1,5 +1,6 @@
 # esp8266-micropython-101
 * all most command we demo on mac OS *
+![esp8266 wemos datasheet](images/datasheet.jpg)
 
 ## Prerequisite
   - python 3
@@ -129,4 +130,4 @@
           # ampy put example/led_blink/led_blink.py led_blink.py
           # ampy put example/led_blink/main.py main.py
           ```
-          then press reset button 
+          then press reset button
