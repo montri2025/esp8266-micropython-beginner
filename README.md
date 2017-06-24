@@ -14,8 +14,8 @@
     # mkvirtualenv -p $(which python3) micropython-101
     Running virtualenv with interpreter /Library/Frameworks/Python.framework/Versions/3.4/bin/python3
     Using base prefix '/Library/Frameworks/Python.framework/Versions/3.4'
-    New python executable in /Users/montri.s/.virtualenvs/micropython-101/bin/python3
-    Also creating executable in /Users/montri.s/.virtualenvs/micropython-101/bin/python
+    New python executable in /Users/username/.virtualenvs/micropython-101/bin/python3
+    Also creating executable in /Users/username/.virtualenvs/micropython-101/bin/python
     Installing setuptools, pip, wheel...done.
 
     # setvirtualenvproject $VIRTUAL_ENV $(pwd)
