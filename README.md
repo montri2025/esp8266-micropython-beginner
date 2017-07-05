@@ -57,6 +57,8 @@
     Wrote 602112 bytes at 0x0 in 51.9 seconds (92.9 kbit/s)...
     Leaving...
     ```
+    delete flash 
+    # esptool.py --port /dev/tty.wchusbserial1420 erase_flash
 
 5. MicroPython REPL prompt (screen) Mac you can use the built-in
 
